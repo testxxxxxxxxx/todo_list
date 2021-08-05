@@ -23,7 +23,9 @@ class page extends Controller
     {
         $tasks=DB::table('task')->where('user_id',Auth::id())->get();
 
-        return view('show_task',compact('tasks'));
+        $req_0=false;
+
+        return view('show_task',compact('tasks'),compact('req_0'));
 
     }
 
@@ -46,14 +48,18 @@ class page extends Controller
 
         $tasks=DB::table('task')->where(['id'=>$this->user_0,'user_id'=>$this->user_id])->update(['content_0'=>$this->content_0]);
 
-        return "True";
+        return redirect('/home/functions/show_task');
 
     }
     public function update_task_0(Request $request)
     {
-        $id_0=$request->input('id');
+        $id_0=$request->get("id");
 
-        return view('update_task',compact('id_0'));
+        $tasks=DB::table('task')->where('user_id',Auth::id())->get();
+
+        $req_0=true;
+
+        return view('show_task',compact('tasks'),compact('req_0'),compact('id_0'));
 
     }
     public function delete_task(Request $request)

@@ -17,11 +17,6 @@ use Illuminate\Auth\Middleware\Authenticate;
 Route::get('/', function () {
     return view('welcome');
 });
-/*Route::get('/home/functions/index','App\Http\Controllers\page@index');
-Route::get('/home/functions/show_task','App\Http\Controllers\page@show_task');
-Route::get('/home/functions/insert_task','App\Http\Controllers\page@insert_task');
-Route::get('/home/functions/update_task','App\Http\Controllers\page@update_task');
-Route::get('/home/functions/delete_task','App\Http\Controllers\page@delete_task');*/
 
 Auth::routes();
 
