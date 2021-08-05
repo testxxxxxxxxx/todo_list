@@ -1,0 +1,47 @@
+:root {
+    --size: 25vh;
+    
+}
+body{
+    background-color:darkslategray;
+    margin: 0;
+    padding: 0;
+    
+}
+/*form{
+    position: absolute;
+    left: 35%;
+    top: 5vh;
+    display: block;
+
+}*/
+textarea{
+    border-radius: 10px;
+    border: solid 3px black;
+    /*float: center;*/
+    position: absolute;
+    left: 35%;
+    top: 2vh;
+    display: inline-flex;
+
+}
+input{
+    background-color:dimgray;
+    display: block;
+    border-radius: 10px;
+    border: solid 3px black;
+
+}
+div.notes{
+    background-color:slategrey;
+    height: 10vh;
+    width: var(--size);
+    float: center;
+
+}
+div.insert{
+    position: absolute;
+    display: inline-flex;
+    left: 35%;
+
+}
