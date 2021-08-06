@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
+
 @section('content')
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<link rel="stylesheet" type="text/css" href="<?php echo asset('style.css')?>">
+
+</head>
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -75,3 +85,6 @@
     </div>
 </div>
 @endsection
+</body>
+
+</html>

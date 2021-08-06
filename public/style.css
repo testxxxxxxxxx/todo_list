@@ -8,21 +8,16 @@ body{
     padding: 0;
     
 }
-/*form{
-    position: absolute;
-    left: 35%;
-    top: 5vh;
-    display: block;
-
-}*/
 textarea{
     border-radius: 10px;
     border: solid 3px black;
-    /*float: center;*/
-    position: absolute;
+    position: static;
     left: 35%;
-    top: 2vh;
-    display: inline-flex;
+    display: block;
+
+}
+textarea:hover { 
+    border: solid 3px darkslategray;
 
 }
 input{
@@ -30,18 +25,50 @@ input{
     display: block;
     border-radius: 10px;
     border: solid 3px black;
+    color: white;
+    font-size: 20px;
+
+}
+input:hover {
+    background-color: black;
+    font-size: 15px;   
 
 }
 div.notes{
-    background-color:slategrey;
+    /*background-color:slategrey;*/
     height: 10vh;
     width: var(--size);
-    float: center;
+    color: white;
+    font-size: 15px;
+    display: inline;
 
 }
 div.insert{
     position: absolute;
     display: inline-flex;
     left: 35%;
+    color: white;
+    font-size: 20px;
 
+}
+div.login_t{
+    display: block;
+}
+li{
+    list-style: none;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+
+}
+a:hover {
+    text-decoration: underline;
+
+}
+span{
+    background-color: slategrey;
+    color: black;
 }

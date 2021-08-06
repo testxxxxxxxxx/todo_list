@@ -32,6 +32,9 @@ class page extends Controller
 
     public function insert_task(Request $request)
     {
+        if($request->input('content_0')===null) return redirect('/home/functions/show_task');
+        else
+        {
             $this->content_0=$request->input('content_0');
             $this->user_0=Auth::id();
 
@@ -39,16 +42,24 @@ class page extends Controller
 
             return redirect('/home/functions/show_task');
 
+        }
+
     }
     public function update_task(Request $request)
     {
-        $this->content_0=$request->input('content_0');
-        $this->user_0=$request->input('id');
-        $this->user_id=Auth::id();
+        if($request->input('content_0')===null) return redirect('/home/functions/show_task');
+        else
+        {
 
-        $tasks=DB::table('task')->where(['id'=>$this->user_0,'user_id'=>$this->user_id])->update(['content_0'=>$this->content_0]);
+            $this->content_0=$request->input('content_0');
+            $this->user_0=$request->input('id');
+            $this->user_id=Auth::id();
 
-        return redirect('/home/functions/show_task');
+            $tasks=DB::table('task')->where(['id'=>$this->user_0,'user_id'=>$this->user_id])->update(['content_0'=>$this->content_0]);
+
+            return redirect('/home/functions/show_task');
+
+        }
 
     }
     public function update_task_0(Request $request)
@@ -59,7 +70,7 @@ class page extends Controller
 
         $req_0=true;
 
-        return view('show_task',compact('tasks'),compact('req_0'),compact('id_0'));
+        return view('show_task',compact('tasks','req_0','id_0'));
 
     }
     public function delete_task(Request $request)

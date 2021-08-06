@@ -30,19 +30,23 @@
 
 </div>
 
+    <div class="notes"> Zadania:</div><br>
+
     @foreach($tasks as $task)
-        <div class="notes"> 
+        <div class="col-md-8 notes"> 
         
-        {{$task->id}}{{$task->content_0}}
+        <span>{{$task->content_0}}</span>
         <a href="/home/functions/update_task_0?id={{$task->id}}"> 
         <input type="submit" name="edit" value="Edit"></a>
-        @if ($req_0==true)
+        @if ($req_0==true && $task->id==$id_0)
             <form name="b" method="get" action="update_task?id=$task->id">
 
-                <textarea name="content_0" cols="5" rows="5">
+                <textarea name="content_0" cols="5" rows="5" id="{{$task->id}}">
+                {{$task->content_0}}
 
                 </textarea>
 
+                <label for="id"> Kliknij(id) tutaj aby zapisać zmiany: </label>
                 <input type="submit" name="id" value="{{$task->id}}">
             </form>
         @endif
