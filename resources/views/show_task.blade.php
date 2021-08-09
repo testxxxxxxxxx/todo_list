@@ -46,8 +46,9 @@
 
                 </textarea>
 
-                <label for="id"> Kliknij(id) tutaj aby zapisać zmiany: </label>
-                <input type="submit" name="id" value="{{$task->id}}">
+                <label for="id"> Kliknij tutaj aby zapisać zmiany: </label>
+                <input type="hidden" name="id" value="{{$task->id}}">
+                <input type="submit" value="Save">
             </form>
         @endif
 
